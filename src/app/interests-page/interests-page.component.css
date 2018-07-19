@@ -1,0 +1,21 @@
+div {
+	display: inline-block;
+}
+
+p {
+	padding: 4px;
+}
+
+.select {
+	border:1px solid grey; 
+	display: inline-block; 
+	padding: 8px;
+	margin: 4px;
+	float:left;
+	border-radius: 8px;
+}
+
+.select.active {
+	background-color:#123456 !important;
+	color: white;
+}
