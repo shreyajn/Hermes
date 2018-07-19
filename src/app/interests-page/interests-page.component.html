@@ -2,15 +2,15 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"  crossorigin="anonymous">
 </head>
 
-<h3> Interests</h3>
-<div >
-	<div class="select" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true"> <p> {{ interest }} </p>
+<h3 style="float: left;"> Interests</h3>
+<div style="margin-left: 384px; margin-right: 384px;">
+	<div class="select" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true"> {{ interest }} 
 	</div>
 </div>
-<h3> Food </h3>
-<div>
-	<div class="select" *ngFor="let food of foods; let i = index" (click)="onClick2(i)" [class.active]="this.arr2[i] == true"> <p>
-	{{ food }} </p>
+<h3 style="float: left;"> Food </h3>
+<div style="margin-left: 384px; margin-right: 384px;">
+	<div class="select" *ngFor="let food of foods; let i = index" (click)="onClick2(i)" [class.active]="this.arr2[i] == true">
+	{{ food }}
 	</div>
 </div>
 

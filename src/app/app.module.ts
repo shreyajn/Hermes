@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { InterestsPageComponent } from './interests-page/interests-page.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { InterestsPageComponent } from './interests-page/interests-page.componen
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule, 
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

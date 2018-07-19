@@ -7,7 +7,8 @@ p {
 }
 
 .select {
-	border:1px solid grey; 
+	border:1px solid; 
+	border-color: #455A64;
 	display: inline-block; 
 	padding: 8px;
 	margin: 4px;
@@ -16,6 +17,6 @@ p {
 }
 
 .select.active {
-	background-color:#123456 !important;
+	background-color:#FFC107 !important;
 	color: white;
 }
