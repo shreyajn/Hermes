@@ -2,18 +2,66 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"  crossorigin="anonymous">
 </head>
 
-<h3 style="float: left;"> Interests</h3>
-<div style="margin-left: 384px; margin-right: 384px;">
-	<div class="select" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true"> {{ interest }} 
-	</div>
-</div>
-<h3 style="float: left;"> Food </h3>
-<div style="margin-left: 384px; margin-right: 384px;">
-	<div class="select" *ngFor="let food of foods; let i = index" (click)="onClick2(i)" [class.active]="this.arr2[i] == true">
-	{{ food }}
-	</div>
-</div>
 
-<button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>
 
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+
+      		<div style="margin-left: 384px; margin-right: 384px; margin-top: 32px;">
+			<h3 style="float: left; "> Interests</h3>
+			<div>
+				<div class="select" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true">
+					{{ interest }} 
+				</div>
+			</div>
+			</div>
+			<div style="margin-left: 384px; margin-right: 384px;">
+				<h3 style="float: left; margin: 16px"> Food </h3>
+				<div>
+					<div class="select" *ngFor="let food of foods; let i = index" (click)="onClick2(i)" [class.active]="this.arr2[i] == true">
+						{{ food }}
+					</div>
+				</div>
+			</div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+
+
+
+
+      	<!-- PASCAL's CODE -->
+
+
+
+    
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+
+
+<!-- 
+
+<button mat-raised-button (click)="onSubmit()" color="primary" style="background-color: #FFC107">Submit</button>
+ -->
 
