@@ -1,7 +1,7 @@
 import json, requests
 from fuzzywuzzy import fuzz
 import itertools
-from flask import Flask, request, jsonify, Response
+from flask import Flask, request, jsonify, Response, make_response
 from ast import literal_eval
 app = Flask(__name__)
 
@@ -9,8 +9,8 @@ app = Flask(__name__)
 url1 = 'https://api.foursquare.com/v2/venues/search'
 url2 = 'https://api.foursquare.com/v2/venues/'
 url3 = 'https://api.foursquare.com/v2/venues/explore'
-USER_ID='XVTJEULC3VARU4Y1HBDPMB3RER3RVSCHNFT5SN4QNYTB0UXJ'
-SECRET='F2NA3DH3JDLVMN4K4VWWZ5YSIG5Z0GRY5CUZXBTLWTJEKX2U'
+USER_ID='OB1KRBSDHHZ5YJ4VM4SM3AVL1QNKQNWR13KFDYTJ5TQZCJDA'
+SECRET='N1HJ3UIX5LOCUUNLKJC20LN5EZH5LG2W3T3UODOHTUFKCS1M'
 # # USER_ID='TYRYTGKWKWJR5PMEZBCUKSW1BC4KUHMEB3OVB2YZSOIBQTEO'
 # # SECRET='VL40XCHT0HJMZ5HNRDB0G5GCO2B20B2M1ERUKBOP4RQGTIWS'
 
@@ -151,7 +151,10 @@ def getItenary():
 	#print(intera)
 	response={}
 	response['data']=intera+inters
-	return Response(json.dumps(response),status=200,mimetype='application/json')
+	payload = make_response(json.dumps(response))
+	payload.headers['Content-Type'] = 'text/json'
+	payload.headers['Access-Control-Allow-Origin'] = '*'
+	return payload
 
 
     
