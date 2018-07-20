@@ -72,4 +72,15 @@ export class InterestsPageComponent implements OnInit {
     }
   }
 
+  goUp(index: number) {
+  	const temp = this.interests[index - 1];
+    this.interests[index - 1] = this.interests[index];
+    this.interests[index] = temp;
+
+  }
+
+  goDown(index: number) {
+
+  }
+
 }

@@ -23,6 +23,7 @@ agm-map {
 	border:1px solid; 
 	border-color: #455A64;
 	float:left;
+	padding: 4px;
 	border-radius: 16px;
 	width: 100%;
 }

@@ -57,21 +57,20 @@
     <ng-template matStepLabel>Done</ng-template>
     	<div style="width: 408px; border: 1px solid black; float: left; height:100vh;">
     		<div class="itinerary" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true">
-					{{ interest }} 
+					<p style="float: left; display: block; clear: left;">{{ interest }}</p>
+					<p style="float:  right;"> 8:00 am to 10 am </p>
+					<p style="float: left; display: block; clear: left; "> 857 Raintree Dr., San Jose, CA, 95129 </p>
+					<button (click)="goUp(i)">Up</button>
+					<button (click)="goUp(i + 1)">Down</button>
+					
 				</div>
 		</div>
-		<div style="width: 950px; border: 1px solid black; float: right; height:100vh;">
+		<button (click)="switch()"></button>
+		<div style="width: 975px; border: 1px solid black; float: right; height:100vh;">
 			<agm-map [latitude]="latitude" [longitude]="longitude">
 
 			</agm-map>
 		</div>
-
-
-
-
-
-
-
 
    <!--  <div>
       <button mat-button matStepperPrevious>Back</button>
