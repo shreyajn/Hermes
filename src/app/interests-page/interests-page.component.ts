@@ -112,5 +112,15 @@ export class InterestsPageComponent implements OnInit {
 
   }
 
+  public options = {type : 'address', componentRestrictions: {  }};
+getAddress(place: Address) {
+    console.log('Address', place);
+  }
+  getFormattedAddress(event: any) {
+    console.log(event);
+    this.longitude = event.lng;
+    this.latitude = event.lat;
+  }
+
 
 }

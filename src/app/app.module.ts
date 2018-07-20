@@ -11,6 +11,8 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import {AngularGooglePlaceModule} from 'angular-google-place';
+
 
 import { AgmCoreModule } from '@agm/core'
 
@@ -48,7 +50,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     }),
     [NgxMaterialTimepickerModule.forRoot()],
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    [AngularGooglePlaceModule]
   ],
   providers: [],
   bootstrap: [AppComponent]
