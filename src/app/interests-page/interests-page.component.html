@@ -13,7 +13,7 @@
 			<h3 style="float: left; "> Interests</h3>
 			<div>
 				<div class="select" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true">
-					{{ interest }} 
+					{{ interest }}
 				</div>
 			</div>
 			</div>
@@ -25,7 +25,6 @@
 					</div>
 				</div>
 			</div>
-			<button ></button>
       <div>
         <button mat-button matStepperNext (click)="onSubmit()">Next</button>
       </div>
@@ -33,15 +32,15 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+      <ng-template matStepLabel>Fill out additional information</ng-template>
 
 
 
       <input [ngxTimepicker]="picker">
-<ngx-material-timepicker #picker></ngx-material-timepicker>
+      <ngx-material-timepicker #picker></ngx-material-timepicker>
 
-	<input [ngxTimepicker]="picker">
-	<ngx-material-timepicker #picker></ngx-material-timepicker>
+	<input [ngxTimepicker]="picker2">
+	<ngx-material-timepicker #picker2></ngx-material-timepicker>
 
 
 
@@ -56,25 +55,36 @@
     
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext (click)="onFinalSubmit()">Next</button>
       </div>
     </form>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    	<div style="width: 408px; border: 1px solid black; float: left; height:100vh;">
-    		<div class="itinerary" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true">
+    	<div style="width: 408px; float: left; height:100vh;">
+    		<div class="itinerary" *ngFor="let interest of finalInterests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true">
 					<p style="float: left; display: block; clear: left;">{{ interest }}</p>
-					<p style="float:  right;"> 8:00 am to 10 am </p>
-					<p style="float: left; display: block; clear: left; "> 857 Raintree Dr., San Jose, CA, 95129 </p>
-					<button (click)="goUp(i)">Up</button>
-					<button (click)="goUp(i + 1)">Down</button>
+					<p style="float:  right;"> {{i + 8}}:00 to {{i + 9}}:00 </p>
+					<p style="float: left; display: block; clear: left; ">{{finalLocations[i]}}</p>
+					<!-- <button (click)="goUp(i)">Up</button> -->
+					<button mat-icon-button (click)="goUp(i)">
+    					<mat-icon aria-label="Example icon-button with a heart icon">arrow_upward</mat-icon>
+  					</button>
+  					<button mat-icon-button (click)="goUp(i + 1)">
+    					<mat-icon aria-label="Example icon-button with a heart icon">arrow_downward</mat-icon>
+  					</button>
+
+					<!-- <button (click)="goUp(i + 1)">Down</button> -->
 					
 				</div>
 		</div>
 		<div style="width: 975px; border: 1px solid black; float: right; height:100vh;">
 			<agm-map [latitude]="latitude" [longitude]="longitude">
-
+				<agm-marker *ngFor="let lat of latitudes; let i = index" [latitude]="latitudes[i]" 
+				[longitude]="longitudes[i]">
+					
+				</agm-marker>
+				
 			</agm-map>
 		</div>
 

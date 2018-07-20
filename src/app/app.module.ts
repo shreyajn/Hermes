@@ -7,6 +7,10 @@ import { InterestsPageComponent } from './interests-page/interests-page.componen
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatIconModule} from '@angular/material/icon';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AgmCoreModule } from '@agm/core'
 
@@ -42,7 +46,9 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     AgmCoreModule.forRoot({
     	apiKey: 'AIzaSyBgi9H_wWs3tWUajLTMS7Sc36A_jzku0sc'
     }),
-    [NgxMaterialTimepickerModule.forRoot()]
+    [NgxMaterialTimepickerModule.forRoot()],
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
