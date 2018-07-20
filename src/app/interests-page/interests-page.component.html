@@ -55,10 +55,15 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    	<div style="width: 408px; border: 1px solid black; float: left; height:100vh;;">
+    	<div style="width: 408px; border: 1px solid black; float: left; height:100vh;">
     		<div class="itinerary" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true">
 					{{ interest }} 
 				</div>
+		</div>
+		<div style="width: 950px; border: 1px solid black; float: right; height:100vh;">
+			<agm-map [latitude]="latitude" [longitude]="longitude">
+
+			</agm-map>
 		</div>
 
 
@@ -68,10 +73,9 @@
 
 
 
-    <div>
+   <!--  <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
+    </div> -->
   </mat-step>
 </mat-horizontal-stepper>
 

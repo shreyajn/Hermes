@@ -10,6 +10,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class InterestsPageComponent implements OnInit {
 
+	latitude = 51.5033640;
+	longitude = -0.1276250;
 
 	fs: string = '{"data": [{"activity": "Jazz Club", "lat": 37.77635001768186, "lng": -122.42153942584991, "name": "SFJazz Center", "contact": "(866) 920-5299", "like": 389, "location": "201 Franklin St (at Fell St) San Francisco, CA 94102 United States"}, {"activity": "Mini Golf", "lat": 37.805965, "lng": -122.42273, "like": 1, "name": "Subpar Miniature Golf", "contact": null, "location": "San Francisco, CA 94109 United States"}, {"activity": "BBQ Joint", "lat": 37.77612534143469, "lng": -122.43814234566274, "like": 801, "name": "4505 Burgers & BBQ", "contact": "(415) 231-6993", "location": "705 Divisadero St (at Grove St) San Francisco, CA 94117 United States"}, {"activity": "Bubble Tea Shop", "lat": 37.75398223901287, "lng": -122.490292773866, "like": 13, "name": "Bubble Tea & Dessert Cafe", "contact": "(415) 662-8233", "location": "1788 32nd Ave San Francisco, CA 94122 United States"}]}';
 	

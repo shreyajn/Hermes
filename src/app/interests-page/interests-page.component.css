@@ -5,6 +5,9 @@ div {
 p {
 	padding: 4px;
 }
+agm-map {
+	height: 1000px;
+}
 
 .select {
 	border:1px solid; 

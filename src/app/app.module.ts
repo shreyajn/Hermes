@@ -8,6 +8,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatStepperModule} from '@angular/material/stepper';
 
+import { AgmCoreModule } from '@agm/core'
+
 
 import {
     MatFormFieldModule,
@@ -33,7 +35,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatStepperModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    AgmCoreModule.forRoot({
+    	apiKey: 'AIzaSyBgi9H_wWs3tWUajLTMS7Sc36A_jzku0sc'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
