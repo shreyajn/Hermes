@@ -25,8 +25,9 @@
 					</div>
 				</div>
 			</div>
+			<button ></button>
       <div>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext (click)="onSubmit()">Next</button>
       </div>
     </form>
   </mat-step>
@@ -36,13 +37,19 @@
 
 
 
+      <input [ngxTimepicker]="picker">
+<ngx-material-timepicker #picker></ngx-material-timepicker>
+
+	<input [ngxTimepicker]="picker">
+	<ngx-material-timepicker #picker></ngx-material-timepicker>
+
+
 
       	<!-- PASCAL's CODE -->
       <mat-form-field class="input-group">
-                <input matInput placeholder="Params Key" name="name6"
-                       id="name6" maxlength="32">
-               
-              </mat-form-field>
+            <input matInput placeholder="Address" name="name6"
+                   id="name6">         
+      </mat-form-field>
 
 
 
@@ -65,7 +72,6 @@
 					
 				</div>
 		</div>
-		<button (click)="switch()"></button>
 		<div style="width: 975px; border: 1px solid black; float: right; height:100vh;">
 			<agm-map [latitude]="latitude" [longitude]="longitude">
 

@@ -21,6 +21,9 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatInputModule,
     AgmCoreModule.forRoot({
     	apiKey: 'AIzaSyBgi9H_wWs3tWUajLTMS7Sc36A_jzku0sc'
-    })
+    }),
+    [NgxMaterialTimepickerModule.forRoot()]
   ],
   providers: [],
   bootstrap: [AppComponent]

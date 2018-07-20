@@ -66,10 +66,14 @@ export class InterestsPageComponent implements OnInit {
     }
     for (let i = 0; i < this.arr2.length; i++) {
         if (this.arr2[i] === true) {
-            interests.addInterestsNode(this.foods[i]);
+            interests.addFoodNode(this.foods[i]);
             console.log("Added: " + this.foods[i]);
         }
     }
+	
+	// const obj = JSON.parse(JSON.stringify(interests));
+	console.log(JSON.stringify(interests));
+    
   }
 
   goUp(index: number) {
@@ -80,7 +84,7 @@ export class InterestsPageComponent implements OnInit {
   }
 
   goDown(index: number) {
-
+  	const temp = this.interests
   }
 
 }
