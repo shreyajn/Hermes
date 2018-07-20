@@ -38,6 +38,11 @@
 
 
       	<!-- PASCAL's CODE -->
+      <mat-form-field class="input-group">
+                <input matInput placeholder="Params Key" name="name6"
+                       id="name6" maxlength="32">
+               
+              </mat-form-field>
 
 
 
@@ -50,7 +55,19 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    You are now done.
+    	<div style="width: 408px; border: 1px solid black; float: left; height:100vh;;">
+    		<div class="itinerary" *ngFor="let interest of interests; let i = index" (click)="onClick(i)" [class.active]="this.arr[i] == true">
+					{{ interest }} 
+				</div>
+		</div>
+
+
+
+
+
+
+
+
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>

@@ -7,12 +7,16 @@ import { InterestsPageComponent } from './interests-page/interests-page.componen
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatFormFieldModule} from '@angular/material/form-field';
+
+
+import {
+    MatFormFieldModule,
+    MatInputModule
+} from '@angular/material';
+
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-
 
 
 @NgModule({
@@ -29,6 +33,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatStepperModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

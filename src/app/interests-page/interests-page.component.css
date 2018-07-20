@@ -16,6 +16,14 @@ p {
 	border-radius: 8px;
 }
 
+.itinerary {
+	border:1px solid; 
+	border-color: #455A64;
+	float:left;
+	border-radius: 16px;
+	width: 100%;
+}
+
 .select.active {
 	background-color:#FFC107 !important;
 	color: white;
