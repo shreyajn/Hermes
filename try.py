@@ -1,7 +1,8 @@
 import json, requests
 from fuzzywuzzy import fuzz
 import itertools
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify, Response
+from ast import literal_eval
 app = Flask(__name__)
 
 # # import re
@@ -63,9 +64,12 @@ def hello():
 
 @app.route('/result', methods=['GET'])
 def getItenary():
-	inp =  {"interests":["Mini Golf","Clothing Store"],"food":["Burget Joint","Coffee Shop"]}
-	input_json = json.dumps(inp)
+	#inp =  {"interests":["Mini Golf","Clothing Store"],"food":["Burget Joint","Coffee Shop"]}
+	inp = request.args.get('data', default=None, type=str)
+	d = literal_eval(inp)
+	input_json = json.dumps(d)
 	inp = json.loads(input_json)
+
 	l = []
 	for i in inp['interests']:
 		l.append(i)
@@ -147,7 +151,7 @@ def getItenary():
 	#print(intera)
 	response={}
 	response['data']=intera+inters
-	return json.dumps(response)
+	return Response(json.dumps(response),status=200,mimetype='application/json')
 
 
     
